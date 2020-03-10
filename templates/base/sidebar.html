@@ -1,0 +1,110 @@
+{% load static %}
+<!--===============Start sidebar_code===============-->
+<div class="sidebar">
+    <nav class="sidebar-nav">
+        <ul class="nav">
+           {% if request.user.is_authenticated %}
+            <!--========Start account book code========-->
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}"><i class="fa fa-home"></i><b>Dashboard</b></a>
+            </li>
+
+            <li class="nav-item nav-dropdown">
+                <a class="nav-link nav-dropdown-toggle" href="#">
+                    <i class="fa fa-user fa-fw"></i><b>ADMIN</b></a>
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="nav-icon"></i>User role</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="nav-icon"></i>User creation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="nav-icon"></i>Role assign</a>
+                    </li>
+                </ul>
+            </li>
+            <!--===========End account book code==============-->
+
+            <li class="nav-item nav-dropdown">
+                <a class="nav-link nav-dropdown-toggle" href="#">
+                    <i class="fa fa-book fa-fw"></i><b>MIS</b></a>
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link nav-dropdown-toggle" href="#">
+                            <i class="nav-icon"></i><i class="fa fa-folder"></i><b>Reports</b></a>
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="nav-icon"></i><i class="nav-icon"></i>Zone wise</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="nav-icon"></i><i class="nav-icon"></i>Circle wise</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="nav-icon"></i><i class="nav-icon"></i>Computer center</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="nav-icon"></i><i class="nav-icon"></i>Location wise</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="nav-icon"></i><i class="nav-icon"></i>Customer wise</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="nav-icon"></i><i class="nav-icon"></i>Ministray wise</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link nav-dropdown-toggle" href="#">
+                            <i class="nav-icon"></i><i class="fa fa-align-justify fa-fw"></i><b>Excel download</b></a>
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="nav-icon"></i><i class="nav-icon"></i>Zone wise</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="nav-icon"></i><i class="nav-icon"></i>Circle wise</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="nav-icon"></i><i class="nav-icon"></i>Computer center</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="nav-icon"></i><i class="nav-icon"></i>Location wise</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="nav-icon"></i><i class="nav-icon"></i>Customer wise</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="nav-icon"></i><i class="nav-icon"></i>Ministray wise</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+    <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+
+    {% block sidebar %}
+    {% endblock %}
+</div>
+<!--===============End sidebar code===============-->

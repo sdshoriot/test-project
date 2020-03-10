@@ -1,0 +1,36 @@
+{% load static %}
+<!--===============Start navbar_code===============-->
+<header class="app-header navbar">
+    <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!--===============Start logo_section_code===============-->
+    <ul class="nav navbar-nav d-md-down-none">
+        <li class="nav-item px-2">
+          <a href="{% url 'home' %}"><img src="/static/dist/img/" alt=""></a>
+        </li>  
+    </ul>
+    <!--===============End logo_section_code===============-->
+
+    <!--===============Start logoin_logout_section_code===============-->
+    {%  if request.user.is_authenticated  %}
+    <ul class="nav navbar-nav d-md-down-none">
+        <li class="nav-item px-3">
+           Hi, <b>{{ user.username | upper }}.</b><a href="{% url 'logout' %}"> <u>LOG OUT</u></a>
+        </li>  
+    </ul> 
+    {% else %}
+    <ul class="nav navbar-nav d-md-down-none">
+        <li class="nav-item px-3">
+           <b><a class="nav-link" href="{% url 'login' %}">User Login</a></b>
+        </li>  
+    </ul> 
+    {% endif %}
+    <!--===============End logoin_logout_section_code===============--> 
+  
+    {% block navbar %}
+    {% endblock %}
+
+</header>
+<!--===============End navbar_code===============-->
